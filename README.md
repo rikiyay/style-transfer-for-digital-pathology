@@ -92,6 +92,6 @@ python integrated_gradients.py --data-dir /path/to/CRC-DX-TEST-dataset --low-dat
 Note: please edit paths above.  
   
 ## Citation  
-Learning domain-agnostic visual representation using unrealistic style transfer augmentation in computational pathology.  
+Learning domain-agnostic visual representation using medically-irrelevant style transfer augmentation in computational pathology.  
   
 Rikiya Yamashita, Snikitha Banda, Jeanne Shen, Daniel L Rubin  
