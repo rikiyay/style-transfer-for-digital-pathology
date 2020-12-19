@@ -1,4 +1,4 @@
-name: style
+name: strap
 channels:
   - pytorch
   - conda-forge
