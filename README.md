@@ -48,45 +48,59 @@ conda activate strap
   
 ### prepare stylized datasets  
 ```
-python create_stylized_dataset.py --content-path /path/to/content_images.hdf5 --style-dir /path/to/style_images --out-path /path/to/save/stylized_dataset.hdf5 --alpha 1.0 --content-size 1024 --style-size 256 --save-size 256  
+python create_stylized_dataset.py --content-path /path/to/content_images.hdf5 \
+    --style-dir /path/to/style_images --out-path /path/to/save/stylized_dataset.hdf5 \
+    --alpha 1.0 --content-size 1024 --style-size 256 --save-size 256  
 ```
   
 ### train models  
 ```
-python train.py --path2hdf5 /path/to/development-dataset.hdf5 --save-dir directory /path/to/save/state-dicts --experiment 'style_transfer'  
+python train.py --path2hdf5 /path/to/development-dataset.hdf5 \
+    --save-dir directory /path/to/save/state-dicts --experiment 'style_transfer'  
 ```
 ```
-python train.py --path2hdf5 /path/to/development-dataset.hdf5 --save-dir /path/to/save/state-dicts --experiment 'stain_augmentation'  
+python train.py --path2hdf5 /path/to/development-dataset.hdf5 \
+    --save-dir /path/to/save/state-dicts --experiment 'stain_augmentation'  
 ```
 ```
-python train.py --path2hdf5 /path/to/development-dataset.hdf5 --save-dir /path/to/save/state-dicts --experiment 'stain_normalization'  
+python train.py --path2hdf5 /path/to/development-dataset.hdf5 \
+    --save-dir /path/to/save/state-dicts --experiment 'stain_normalization'  
 ```
 
 ### evaluate models  
 ```
-python eval.py --data-dir /path/to/CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts --experiment 'style_transfer'  
+python eval.py --data-dir /path/to/CRC-DX-TEST-dataset \
+    --state-dict-dir /path/to/state-dicts --experiment 'style_transfer'  
 ```
 ```
-python eval.py --data-dir /path/to/CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts --experiment 'stain_augmentation'  
+python eval.py --data-dir /path/to/CRC-DX-TEST-dataset \
+    --state-dict-dir /path/to/state-dicts --experiment 'stain_augmentation'  
 ```
 ```
-python eval.py --data-dir /path/to/CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts --experiment 'stain_normalization'  
+python eval.py --data-dir /path/to/CRC-DX-TEST-dataset \
+    --state-dict-dir /path/to/state-dicts --experiment 'stain_normalization'  
 ```
     
 ### create low-frequency datasets  
 ```
-python decompose_frequency.py --data-dir /path/to/CRC-DX-TEST-dataset --save-dir /path/to/save/low-frequency-datasets  
+python decompose_frequency.py --data-dir /path/to/CRC-DX-TEST-dataset \
+    --save-dir /path/to/save/low-frequency-datasets  
 ```
 
 ### evaluate models on low-frequency datasets  
 ```
-python eval_on_low_freq.py --data-dir /path/to/low-freq-CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts --out-dir /path/to/save/low-frequency-results  
+python eval_on_low_freq.py --data-dir /path/to/low-freq-CRC-DX-TEST-dataset \
+    --state-dict-dir /path/to/state-dicts --out-dir /path/to/save/low-frequency-results  
 ```
 ```
-python plot_low_freq_results.py --csv-path /path/to/low-frequency-results.csv --out-dir /path/to/save/low-frequency-plots  
+python plot_low_freq_results.py --csv-path /path/to/low-frequency-results.csv \
+    --out-dir /path/to/save/low-frequency-plots  
 ```
 ```
-python integrated_gradients.py --data-dir /path/to/CRC-DX-TEST-dataset --low-data-dir /path/to/low-freq-CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts --out-dir /path/to/save/integrated-gradient-plots --idx 25600 --kfold 1 --radius 70 --reference 'uniform'  
+python integrated_gradients.py --data-dir /path/to/CRC-DX-TEST-dataset \
+    --low-data-dir /path/to/low-freq-CRC-DX-TEST-dataset --state-dict-dir /path/to/state-dicts \
+    --out-dir /path/to/save/integrated-gradient-plots \
+    --idx 25600 --kfold 1 --radius 70 --reference 'uniform'  
 ```
 
 Note: please edit paths above.  
