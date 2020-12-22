@@ -1,3 +1,5 @@
+# https://github.com/bethgelab/stylize-datasets
+
 import torch
 
 def calc_mean_std(feat, eps=1e-5):
