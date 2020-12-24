@@ -2,6 +2,8 @@ import argparse
 import h5py
 from PIL import ImageFile
 from stylize_datasets.stylize_hdf5_single import stylize_hdf5_single
+# to generate multiple stylized images per each content image, comment out above and uncomment below
+# from stylize_datasets.stylize_hdf5_single import stylize_hdf5_multiple
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -23,7 +25,7 @@ parser.add_argument('--style-size', type=int, default=256,
                     keeping the original size if set to 0')
 parser.add_argument('--save-size', type=int, default=256,
                     help='output size for the stylized image')
-# to generate multiple stylized images for each content image, uncomment below
+# to generate multiple stylized images per each content image, uncomment below
 # parser.add_argument('--num-styles', type=int, default=1, help='number of styles to \
 #                         create for each image (default: 1)')
 
@@ -40,5 +42,5 @@ if __name__ == "__main__":
     labels = [i for i in h5['labels']]
     
     stylize_hdf5_single(contents=imgs, style_dir=args.style_dir, out_path=args.out_path, ids=ids, fnames=fnames, labels=labels, alpha=args.alpha, content_size=args.content_size, style_size=args.style_size, save_size=args.save_size)
-    # to generate multiple stylized images for each content image, comment out the above line and uncomment below
-    # stylize_hdf5_single(contents=imgs, style_dir=args.style_dir, out_path=args.out_path, ids=ids, fnames=fnames, labels=labels, alpha=args.alpha, content_size=args.content_size, style_size=args.style_size, save_size=args.save_size, num_styles=args.num_styles)
+    # to generate multiple stylized images per each content image, comment out above and uncomment below
+    # stylize_hdf5_multiple(contents=imgs, style_dir=args.style_dir, out_path=args.out_path, ids=ids, fnames=fnames, labels=labels, alpha=args.alpha, content_size=args.content_size, style_size=args.style_size, save_size=args.save_size, num_styles=args.num_styles)
