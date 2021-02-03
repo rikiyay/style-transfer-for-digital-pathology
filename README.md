@@ -1,7 +1,7 @@
 # Learning domain-agnostic visual representation for computational pathology using medically-irrelevant style transfer augmentation  
   
 ### study overview  
-![](images/graphical_abstract.png)  
+![](images/overview.png)  
   
 This repository contains the code for learning robust and generalizable visual representation using unrealistic style transfer augmentation in digital pathology. We focus on a particular task of classifying colorectal cancer into distinct genetic subtypes called microsatellite status using H&E-stained FFPE histopathology images.  
   
