@@ -114,6 +114,14 @@ python integrated_gradients.py --data-dir /path/to/CRC-DX-TEST-dataset \
 Note: please edit paths above.  
   
 ## Citation  
-Learning domain-agnostic visual representation for computational pathology using medically-irrelevant style transfer augmentation.  
-  
-Rikiya Yamashita, Jin Long, Snikitha Banda, Jeanne Shen, Daniel L Rubin  
+
+[Arxiv paper](https://arxiv.org/abs/2102.01678)
+
+```
+@article{yamashita2021learning,
+  title={Learning domain-agnostic visual representation for computational pathology using medically-irrelevant style transfer augmentation}, 
+  author={Rikiya Yamashita and Jin Long and Snikitha Banda and Jeanne Shen and Daniel L. Rubin},
+  journal={arXiv preprint arXiv:2102.01678},
+  year={2021}
+  }
+```
